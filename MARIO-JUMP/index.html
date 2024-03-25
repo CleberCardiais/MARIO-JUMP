@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+   <link rel="stylesheet" href="/CSS/styles.css">
+   <script src="/JS/scripts.js" defer></script>
+   
+    <title>Mario Jump</title>
+</head>
+<body>
+
+
+    <div class="game-board">
+        <img src="/IMG/clouds.png" class="clouds">
+        <img src="/IMG/mario.gif" class="mario">
+        <img src="/IMG/pipe.png" class="pipe">
+    </div>
+    
+
+    <div class="container">
+        <img class="mario2" src="./IMG/facemario.png">
+     
+    </div>
+    <div class="score">Pontos: <span id="score"></span></div>
+    <button class="startBtn" id="startBtn">Start</button>
+
+
+    <!--script>
+        const mario = document.querySelector('.mario');
+        const pipe = document.querySelector('.pipe');
+        const scoreDisplay = document.getElementById('score');
+        let score = 0;
+        let loop;
+
+        const jump = () => {
+            mario.classList.add('jump');d
+            setTimeout(() => {
+                mario.classList.remove('jump');
+            }, 500);
+        };
+
+        const startGame = () => {
+            score = 0;
+            scoreDisplay.textContent = score;
+            pipe.style.animation = 'movePipe 2s linear infinite'; // Adicione uma animação de movimento para o cano
+            mario.style.bottom = '50px'; // Defina a posição inicial do Mario
+            mario.src = './IMG/mario.png'; // Restaure a imagem padrão do Mario
+            loop = setInterval(gameLoop, 10);
+        };
+
+        const gameLoop = () => {
+            const pipePosition = pipe.offsetLeft;
+            const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
+            
+            if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 70) {
+                clearInterval(loop);
+                endGame();
+            }
+        };
+
+        const endGame = () => {
+            pipe.style.animation = 'none';
+            mario.src = './IMG/game-over.png';
+            mario.style.width = '75px';
+            mario.style.left = '50px';
+            clearInterval(loop);
+        };
+
+        const updateScore = () => {
+            score++;
+            scoreDisplay.textContent = score;
+        };
+
+        document.addEventListener('keydown', jump);
+
+        // Adicione um event listener para o botão de start
+        document.getElementById('startBtn').addEventListener('click', startGame);
+
+        // Adicione um event listener para verificar se o Mario passou pelo obstáculo
+        pipe.addEventListener('animationiteration', updateScore);
+
+    </script-->
+
+</body>
+</html>
